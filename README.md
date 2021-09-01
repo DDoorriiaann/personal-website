@@ -3,7 +3,7 @@
 
 Hello and welcome !
 
-This is the webapp I use as my personal website, I hope you'll find something usefull for you or your projects.
+This is the webapp I use as my personal website, I hope you'll find something useful for you or your projects.
 
 Don't hesitate to contact me if you need some help/explanations.
 
