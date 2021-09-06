@@ -1,0 +1,80 @@
+@import "../../../theme-customisation";
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: $primary;
+  font-family: "Solway", serif;
+  color: white;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 48px;
+  & .hi {
+    margin-top: 10vh;
+  }
+  & .who {
+    margin-top: 4vh;
+    font-size: 72px;
+  }
+  & .what {
+    width: 50vw;
+    margin: 6vh 0 0 10vw;
+    line-height: 6vh;
+  }
+  & .hero-text-buttons {
+    margin-top: 4vh;
+    padding-left: 10vw;
+    display: flex;
+    width: 50vw;
+  }
+}
+.go-to-portfolio {
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.game {
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24px;
+  & .kill-the-backlog-button {
+    margin-top: 4vh;
+    background-color: $warn;
+    font-family: "Rock Salt", cursive;
+    color: white;
+    & .kill-the-backlog-button-text {
+      transform: rotate(-1deg);
+    }
+  }
+}
+.hero-text-button {
+  font-family: "Roboto Mono", monospace;
+  width: 15vw;
+  margin-right: 2vw;
+}
+
+.bold-secondary {
+  font-weight: 800;
+  color: $secondary;
+}
+
+.underlined {
+  text-decoration: underline;
+}
+
+.shadow-far {
+  text-shadow: 30px 20px 10px rgba(0, 0, 0, 0.7);
+}
+
+.shadow-near {
+  filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.92));
+}
