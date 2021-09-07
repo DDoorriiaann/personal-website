@@ -15,9 +15,9 @@ import {
 export class HeroComponent implements AfterViewInit {
   @ViewChild('jobTitle') jobTitle!: ElementRef;
 
-  firstJobTitle = 'Front-End Dev';
-  secondJobTitle = 'Back En';
-  thirdJobTitle = 'FullStack Developer !';
+  firstJobTitle = 'Front-End';
+  secondJobTitle = 'Back-End';
+  thirdJobTitle = 'FullStack';
   i = 0;
   constructor() {}
   ngAfterViewInit(): void {
