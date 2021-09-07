@@ -1,41 +1,93 @@
 <div class="hero">
   <div class="language-selection">
-    <div class="language-button">En</div>
-    <div class="language-button">Fr</div>
+    <div
+      class="language-button"
+      id="En-button"
+      [ngClass]="{ 'active-language': this.language == 'English' }"
+      (click)="toggleLanguage('English'); stopAnim()"
+    >
+      En
+    </div>
+    <div
+      class="language-button"
+      id="Fr-button"
+      [ngClass]="{ 'active-language': this.language == 'French' }"
+      (click)="toggleLanguage('French'); stopAnim()"
+    >
+      Fr
+    </div>
   </div>
-  <div class="hero-text">
-    <div class="hi">Hi!</div>
-    <div class="who shadow-far">
-      I'm <span class="secondary bold">Dorian</span>,
-    </div>
-    <div class="what">
-      A
-      <span class="secondary" #jobTitle></span>
-      <p>Developer !</p>
-      <p>I craft user-friendly web applications.</p>
-    </div>
+  <div *ngIf="this.language == 'English'">
+    <div class="hero-text">
+      <div class="hi">Hi!</div>
+      <div class="who shadow-far">
+        I'm <span class="secondary bold">Dorian</span>,
+      </div>
+      <div class="what">
+        A
+        <span class="secondary" #jobTitle *ngIf="this.animCount == 0"></span>
+        <span class="secondary" *ngIf="this.animCount == 1"> FullStack</span>
 
-    <div class="hero-text-buttons">
-      <div class="hero-text-buttons buttons-group">
-        <div class="buttons-group-left">
-          <button class="rounded-button hero-text-button shadow-near">
-            Hire me
-          </button>
-        </div>
-        <div class="buttons-group-right">
-          <button class="rounded-button hero-text-button shadow-near">
-            See my work
-          </button>
+        <span class="developer-desktop"> Developer !</span>
+        <p class="developer-mobile">Developer !</p>
+        <p>I craft user-friendly web applications.</p>
+      </div>
+      <div class="hero-text-buttons">
+        <div class="hero-text-buttons buttons-group">
+          <div class="buttons-group-left">
+            <button class="rounded-button hero-text-button shadow-near">
+              Hire me
+            </button>
+          </div>
+          <div class="buttons-group-right">
+            <button class="rounded-button hero-text-button shadow-near">
+              See my work
+            </button>
+          </div>
         </div>
       </div>
     </div>
+    <div class="game-button">
+      <div class="text-hook">Or...</div>
+      <button class="rounded-button kill-the-backlog-button shadow-near">
+        <div class="kill-the-backlog-button-text">KILL THE BACKLOG !</div>
+      </button>
+    </div>
   </div>
-  <div class="game-button">
-    <div class="text-hook">Or...</div>
-    <button class="rounded-button kill-the-backlog-button shadow-near">
-      <div class="kill-the-backlog-button-text">KILL THE BACKLOG !</div>
-    </button>
-  </div>
+  <div *ngIf="this.language == 'French'">
+    <div class="hero-text">
+      <div class="hi">Bonjour!</div>
+      <div class="who shadow-far">
+        Je suis <span class="secondary bold">Dorian</span>,
+      </div>
+      <div class="what">
+        <span class="developer-desktop"> Développeur</span>
+        <p class="developer-mobile">Développeur</p>
+        <span class="secondary" #jobTitle *ngIf="animCount == 0"></span>
+        <span class="secondary" *ngIf="this.animCount == 1">FullStack</span>
 
-  <script></script>
+        <p>Je fabrique des applications web conviviales</p>
+      </div>
+      <div class="hero-text-buttons">
+        <div class="hero-text-buttons buttons-group">
+          <div class="buttons-group-left">
+            <button class="rounded-button hero-text-button shadow-near">
+              Hire me
+            </button>
+          </div>
+          <div class="buttons-group-right">
+            <button class="rounded-button hero-text-button shadow-near">
+              See my work
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="game-button">
+      <div class="text-hook">Or...</div>
+      <button class="rounded-button kill-the-backlog-button shadow-near">
+        <div class="kill-the-backlog-button-text">KILL THE BACKLOG !</div>
+      </button>
+    </div>
+  </div>
 </div>

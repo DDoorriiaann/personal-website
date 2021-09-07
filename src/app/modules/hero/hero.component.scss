@@ -56,6 +56,9 @@
     margin-top: 6vh;
     line-height: 6vh;
     font-size: 40px;
+    & .developer-mobile {
+      display: none;
+    }
   }
   & .hero-text-buttons {
     display: flex;
@@ -88,13 +91,13 @@
 }
 
 .game-button {
-  margin-top: 4vh;
+  margin-top: 3vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 20px;
   & .kill-the-backlog-button {
-    margin-top: 2vh;
+    margin-top: 3vh;
     background-color: $warn;
     font-family: "Rock Salt", cursive;
     color: white;
@@ -135,23 +138,41 @@
   filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.92));
 }
 
+.active-language {
+  background-color: $secondary !important;
+}
+
 .text-hook {
   text-align: center;
   font-size: 26px;
   width: 150px;
 }
 
+///////Mobile version
+
 @media screen and (max-width: 640px) {
   .hero-text {
     & .hi .what {
-      font-size: 30px;
+      font-size: 25px;
     }
     & .who {
-      font-size: 56px;
+      font-size: 45px;
     }
     & .what {
       width: 80vw;
       text-align: center;
+      font-size: 25px;
+      & .developer-desktop {
+        display: none;
+      }
+      & .developer-mobile {
+        display: block;
+      }
+      & #jobTitle {
+        color: red !important;
+        height: 50px;
+        clear: both;
+      }
     }
     & .hero-text-buttons .buttons-group {
       width: 100vw;
