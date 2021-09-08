@@ -15,13 +15,12 @@ export class HeroComponent implements AfterViewInit {
   i = 0;
   constructor() {}
   ngAfterViewInit(): void {
-    this.write1();
+    this.i = -1;
     if (localStorage.getItem('language')) {
       this.language = localStorage.getItem('language')!;
+      this.jobTitle.nativeElement.innerHTML = '';
     }
-    if (localStorage.getItem('animCount')) {
-      this.animCount = parseInt(localStorage.getItem('animCount')!, 10);
-    }
+    this.write1();
   }
   //////////// Typewriter effect
   write1() {
@@ -34,8 +33,6 @@ export class HeroComponent implements AfterViewInit {
       setTimeout(() => this.write1(), speed);
     } else if (this.i == this.firstJobTitle.length && this.animCount == 0) {
       this.delete1();
-    } else if (this.animCount == 1) {
-      this.jobTitle.nativeElement.innerHTML = 'FullStack';
     }
   }
   delete1() {
@@ -49,8 +46,6 @@ export class HeroComponent implements AfterViewInit {
       } else if (this.i == 0) {
         this.write2();
       }
-    } else {
-      this.jobTitle.nativeElement.innerHTML = 'FullStack';
     }
   }
   write2() {
@@ -65,8 +60,6 @@ export class HeroComponent implements AfterViewInit {
       } else if (this.i == this.secondJobTitle.length) {
         this.delete2();
       }
-    } else {
-      this.jobTitle.nativeElement.innerHTML = 'FullStack';
     }
   }
   delete2() {
@@ -80,8 +73,6 @@ export class HeroComponent implements AfterViewInit {
       } else if (this.i == 0) {
         this.write3();
       }
-    } else {
-      this.jobTitle.nativeElement.innerHTML = 'FullStack';
     }
   }
   write3() {
@@ -94,8 +85,6 @@ export class HeroComponent implements AfterViewInit {
         this.i++;
         setTimeout(() => this.write3(), speed);
       }
-    } else {
-      this.jobTitle.nativeElement.innerHTML = 'FullStack';
     }
   }
   stopAnim() {
@@ -107,6 +96,5 @@ export class HeroComponent implements AfterViewInit {
   toggleLanguage(updatedLanguage: string) {
     this.language = updatedLanguage;
     localStorage.setItem('language', updatedLanguage);
-    localStorage.setItem('animCount', '0');
   }
 }

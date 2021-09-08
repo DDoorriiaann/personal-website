@@ -44,10 +44,9 @@ $personal-website-theme: mat.define-light-theme(
 html,
 body {
   height: 100%;
-}
-body {
   margin: 0;
   font-family: "Solway", serif;
+  //min-width: 360px;
 }
 
 .rounded-button {

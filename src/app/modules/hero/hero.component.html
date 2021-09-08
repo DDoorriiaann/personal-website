@@ -30,7 +30,7 @@
 
         <span class="developer-desktop"> Developer !</span>
         <p class="developer-mobile">Developer !</p>
-        <p>I craft user-friendly web applications.</p>
+        <p class="what-second-part">I craft user-friendly web applications.</p>
       </div>
       <div class="hero-text-buttons">
         <div class="hero-text-buttons buttons-group">
@@ -61,32 +61,40 @@
         Je suis <span class="secondary bold">Dorian</span>,
       </div>
       <div class="what">
-        <span class="developer-desktop"> Développeur</span>
+        <span class="developer-desktop">Développeur </span>
         <p class="developer-mobile">Développeur</p>
-        <span class="secondary" #jobTitle *ngIf="animCount == 0"></span>
-        <span class="secondary" *ngIf="this.animCount == 1">FullStack</span>
+        <span
+          class="fullstack secondary"
+          #jobTitle
+          *ngIf="animCount == 0"
+        ></span>
+        <span class="fullstack secondary" *ngIf="this.animCount == 1"
+          >FullStack</span
+        >
 
-        <p>Je fabrique des applications web conviviales</p>
+        <p class="what-second-part">
+          Je fabrique des applications web conviviales
+        </p>
       </div>
       <div class="hero-text-buttons">
         <div class="hero-text-buttons buttons-group">
           <div class="buttons-group-left">
             <button class="rounded-button hero-text-button shadow-near">
-              Hire me
+              M'engager
             </button>
           </div>
           <div class="buttons-group-right">
             <button class="rounded-button hero-text-button shadow-near">
-              See my work
+              Voir mon travail
             </button>
           </div>
         </div>
       </div>
     </div>
     <div class="game-button">
-      <div class="text-hook">Or...</div>
+      <div class="text-hook">Ou...</div>
       <button class="rounded-button kill-the-backlog-button shadow-near">
-        <div class="kill-the-backlog-button-text">KILL THE BACKLOG !</div>
+        <div class="kill-the-backlog-button-text">DETRUIRE LE BACKLOG !</div>
       </button>
     </div>
   </div>
