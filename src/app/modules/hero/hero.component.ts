@@ -1,4 +1,5 @@
 import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-hero',
@@ -7,6 +8,8 @@ import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 })
 export class HeroComponent implements AfterViewInit {
   @ViewChild('jobTitle') jobTitle!: ElementRef;
+  @ViewChild(MatSidenav)
+  sidenav!: MatSidenav;
   language = 'English';
   firstJobTitle = 'Front-End';
   secondJobTitle = 'Back-End';

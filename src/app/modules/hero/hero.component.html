@@ -1,5 +1,9 @@
-<div class="menu">
-  <div class="language-selection">
+<mat-toolbar class="toolbar">
+  <button class="menu-icon" mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon [inline]="true" *ngIf="sidenav.opened == false">info</mat-icon>
+    <mat-icon [inline]="true" *ngIf="sidenav.opened">close</mat-icon>
+  </button>
+  <div class="toolbar-language-selection">
     <div
       class="language-button"
       id="En-button"
@@ -17,89 +21,106 @@
       Fr
     </div>
   </div>
-</div>
-<div class="hero">
-  <div *ngIf="this.language == 'English'">
-    <div class="hero-text">
-      <div class="hi">Hi!</div>
-      <div class="who shadow-far">
-        I'm <span class="secondary bold">Dorian</span>,
-      </div>
-      <div class="what">
-        A
-        <span class="secondary" #jobTitle *ngIf="this.animCount == 0"></span>
-        <span class="secondary" *ngIf="this.animCount == 1"> FullStack</span>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav mode="over" #sidenav="matSidenav"></mat-sidenav>
+  <mat-sidenav-content>
+    <div class="hero">
+      <div *ngIf="this.language == 'English'">
+        <div class="hero-text">
+          <div class="hi">Hi!</div>
+          <div class="who shadow-far">
+            I'm <span class="secondary bold">Dorian</span>,
+          </div>
+          <div class="what">
+            A
+            <span
+              class="secondary"
+              #jobTitle
+              *ngIf="this.animCount == 0"
+            ></span>
+            <span class="secondary" *ngIf="this.animCount == 1">
+              FullStack</span
+            >
 
-        <span class="developer-desktop"> Developer !</span>
-        <p class="developer-mobile">Developer !</p>
-        <p class="what-second-part">I craft user-friendly web applications.</p>
+            <span class="developer-desktop"> Developer !</span>
+            <p class="developer-mobile">Developer !</p>
+            <p class="what-second-part">
+              I craft user-friendly web applications.
+            </p>
+          </div>
+          <div class="hero-question">Would you want to?</div>
+          <div class="hero-text-buttons">
+            <div class="hero-text-buttons buttons-group">
+              <div class="buttons-group-left">
+                <button
+                  class="hire-me rounded-button hero-text-button shadow-near"
+                >
+                  Hire me
+                </button>
+              </div>
+              <div class="buttons-group-right">
+                <button class="rounded-button hero-text-button shadow-near">
+                  See my work
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="game-button">
+          <div class="hero-question">Or...</div>
+          <button class="rounded-button kill-the-backlog-button shadow-near">
+            <div class="kill-the-backlog-button-text">KILL THE BACKLOG !</div>
+          </button>
+        </div>
       </div>
-      <div class="hero-question">Would you want to?</div>
-      <div class="hero-text-buttons">
-        <div class="hero-text-buttons buttons-group">
-          <div class="buttons-group-left">
-            <button class="rounded-button hero-text-button shadow-near">
-              Hire me
-            </button>
+      <div *ngIf="this.language == 'French'">
+        <div class="hero-text">
+          <div class="hi">Bonjour!</div>
+          <div class="who shadow-far">
+            Je suis <span class="secondary bold">Dorian</span>,
           </div>
-          <div class="buttons-group-right">
-            <button class="rounded-button hero-text-button shadow-near">
-              See my work
-            </button>
+          <div class="what">
+            <span class="developer-desktop">Développeur </span>
+            <p class="developer-mobile">Développeur</p>
+            <span
+              class="fullstack secondary"
+              #jobTitle
+              *ngIf="animCount == 0"
+            ></span>
+            <span class="fullstack secondary" *ngIf="this.animCount == 1"
+              >FullStack</span
+            >
+
+            <p class="what-second-part">
+              Je fabrique des applications web conviviales
+            </p>
           </div>
+          <div class="hero-question">Désirez-vous?</div>
+          <div class="hero-text-buttons">
+            <div class="hero-text-buttons buttons-group">
+              <div class="buttons-group-left">
+                <button class="rounded-button hero-text-button shadow-near">
+                  M'engager
+                </button>
+              </div>
+              <div class="buttons-group-right">
+                <button class="rounded-button hero-text-button shadow-near">
+                  Voir mon travail
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="game-button">
+          <div class="hero-question">Ou...</div>
+          <button class="rounded-button kill-the-backlog-button shadow-near">
+            <div class="kill-the-backlog-button-text">
+              DETRUIRE LE BACKLOG !
+            </div>
+          </button>
         </div>
       </div>
     </div>
-    <div class="game-button">
-      <div class="hero-question">Or...</div>
-      <button class="rounded-button kill-the-backlog-button shadow-near">
-        <div class="kill-the-backlog-button-text">KILL THE BACKLOG !</div>
-      </button>
-    </div>
-  </div>
-  <div *ngIf="this.language == 'French'">
-    <div class="hero-text">
-      <div class="hi">Bonjour!</div>
-      <div class="who shadow-far">
-        Je suis <span class="secondary bold">Dorian</span>,
-      </div>
-      <div class="what">
-        <span class="developer-desktop">Développeur </span>
-        <p class="developer-mobile">Développeur</p>
-        <span
-          class="fullstack secondary"
-          #jobTitle
-          *ngIf="animCount == 0"
-        ></span>
-        <span class="fullstack secondary" *ngIf="this.animCount == 1"
-          >FullStack</span
-        >
-
-        <p class="what-second-part">
-          Je fabrique des applications web conviviales
-        </p>
-      </div>
-      <div class="hero-question">Désirez-vous?</div>
-      <div class="hero-text-buttons">
-        <div class="hero-text-buttons buttons-group">
-          <div class="buttons-group-left">
-            <button class="rounded-button hero-text-button shadow-near">
-              M'engager
-            </button>
-          </div>
-          <div class="buttons-group-right">
-            <button class="rounded-button hero-text-button shadow-near">
-              Voir mon travail
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="game-button">
-      <div class="hero-question">Ou...</div>
-      <button class="rounded-button kill-the-backlog-button shadow-near">
-        <div class="kill-the-backlog-button-text">DETRUIRE LE BACKLOG !</div>
-      </button>
-    </div>
-  </div>
-</div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
