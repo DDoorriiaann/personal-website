@@ -65,8 +65,8 @@ mat-sidenav-container {
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  //background-color: $primary;
-  background: linear-gradient($primary, black);
+  background-color: $primary;
+  //background: linear-gradient($primary, lightblue);
 
   font-family: $primary-font;
   color: white;

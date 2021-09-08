@@ -7,22 +7,30 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./hero.component.scss'],
 })
 export class HeroComponent implements AfterViewInit {
-  @ViewChild('jobTitle') jobTitle!: ElementRef;
+  //// Sidenav
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
+
+  //// Default language
   language = 'English';
+
+  ////Jobtitle animation related variables
+  @ViewChild('jobTitle') jobTitle!: ElementRef;
   firstJobTitle = 'Front-End';
   secondJobTitle = 'Back-End';
   thirdJobTitle = 'FullStack';
   animCount = 0;
   i = 0;
+
   constructor() {}
   ngAfterViewInit(): void {
-    this.i = -1;
+    /// Get last language selected by user
     if (localStorage.getItem('language')) {
       this.language = localStorage.getItem('language')!;
       this.jobTitle.nativeElement.innerHTML = '';
     }
+    /// Restart jobtitle animation after each page refresh
+    this.i = -1;
     this.write1();
   }
   //////////// Typewriter effect
