@@ -1,4 +1,34 @@
 @import "../../../theme-customisation";
+.menu {
+  width: 100vw;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  background-color: $primary;
+  & .language-selection {
+    background-color: $primary;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100vw;
+    padding-right: 10px;
+    & .language-button {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 1vw;
+      padding: 5px;
+      border-radius: 100px;
+      background-color: white;
+      width: 30px;
+      height: 30px;
+      color: $primary;
+      font-weight: 700;
+      user-select: none;
+    }
+  }
+}
 
 .hero {
   display: flex;
@@ -8,29 +38,7 @@
   background-color: $primary;
   font-family: $primary-font;
   color: white;
-  min-height: 100vh;
-}
-
-.language-selection {
-  margin-top: 30px;
-  display: flex;
-  justify-content: flex-end;
-  width: 90vw;
-  & .language-button {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 1vw;
-    padding: 5px;
-    border-radius: 100px;
-    background-color: white;
-    width: 30px;
-    height: 30px;
-    color: $primary;
-    font-weight: 700;
-    user-select: none;
-  }
+  min-height: 94vh;
 }
 
 .hero-text {
@@ -63,17 +71,20 @@
     }
     & .what-second-part {
       padding-top: 20px;
+      padding-bottom: 10px;
     }
     & .fullstack {
       margin: 0;
     }
   }
+
   & .hero-text-buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
 
     & .buttons-group {
+      padding-top: 30px;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
@@ -103,7 +114,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 20px;
   padding-bottom: 50px;
   user-select: none;
   & .kill-the-backlog-button {
@@ -116,6 +126,11 @@
     }
   }
 }
+
+.hero-question {
+  font-size: 26px;
+}
+
 .hero-text-button {
   margin: 10px 4vw 0 2vw;
   font-family: $primary-font;
@@ -153,24 +168,19 @@
   background-color: $secondary !important;
 }
 
-.text-hook {
-  text-align: center;
-  font-size: 26px;
-  width: 150px;
-}
-
 ///////Mobile version
 
 @media screen and (max-width: 640px) {
   .hero-text {
-    & .hi .what {
-      font-size: 25px;
+    & .hi {
+      margin-top: 30px;
     }
     & .who {
       font-size: 45px;
     }
     & .what {
       width: 80vw;
+      margin-top: 40px;
       text-align: center;
       font-size: 25px;
       line-height: 25px;
@@ -182,11 +192,15 @@
         margin-bottom: 0;
       }
     }
+
     & .hero-text-buttons .buttons-group {
       width: 100vw;
     }
     & .hero-text-button {
       margin: 10px 0 0 0;
     }
+  }
+  .hero-question {
+    font-size: 20px;
   }
 }
