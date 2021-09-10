@@ -173,6 +173,9 @@ mat-sidenav-container {
   width: 150px;
   color: $primary;
   user-select: none;
+  &:hover {
+    background: red;
+  }
 }
 
 .secondary {

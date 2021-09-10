@@ -11,9 +11,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/Toolbar';
+import { KillTheBacklogComponent } from './modules/kill-the-backlog/kill-the-backlog.component';
+import { PortfolioComponent } from './modules/portfolio/portfolio.component';
 
 @NgModule({
-  declarations: [AppComponent, HeroComponent],
+  declarations: [AppComponent, HeroComponent, KillTheBacklogComponent, PortfolioComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
