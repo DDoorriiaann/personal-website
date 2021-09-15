@@ -1,1 +1,28 @@
-<p>navigation-bar works!</p>
+<mat-toolbar class="toolbar">
+  <button
+    class="menu-icon"
+    mat-icon-button
+    (click)="this.toggleSideNavStatus()"
+  >
+    <mat-icon [inline]="true" *ngIf="sidenavOpened == false">info</mat-icon>
+    <mat-icon [inline]="true" *ngIf="sidenavOpened">close</mat-icon>
+  </button>
+  <div class="toolbar-language-selection">
+    <div
+      class="language-button"
+      id="En-button"
+      [ngClass]="{ 'active-language': this.language == 'English' }"
+      (click)="toggleLanguage('English'); stopAnim()"
+    >
+      En
+    </div>
+    <div
+      class="language-button"
+      id="Fr-button"
+      [ngClass]="{ 'active-language': this.language == 'French' }"
+      (click)="toggleLanguage('French'); stopAnim()"
+    >
+      Fr
+    </div>
+  </div>
+</mat-toolbar>

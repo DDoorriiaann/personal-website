@@ -1,0 +1,25 @@
+@import "../theme-customisation";
+
+mat-sidenav {
+  margin: 10px;
+  padding: 10px;
+  width: calc(40vw - 20px);
+  border-right: none;
+  background: $primary;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+mat-sidenav-container {
+  height: 94vh;
+}
+
+@media screen and (max-width: 640px) {
+  mat-sidenav {
+    width: 90vw;
+  }
+  mat-sidenav-container {
+    height: 87vh;
+  }
+}
