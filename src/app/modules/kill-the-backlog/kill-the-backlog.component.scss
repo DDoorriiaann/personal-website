@@ -1,0 +1,61 @@
+.test {
+  z-index: 4;
+  position: relative;
+}
+
+.dashed-circle {
+  animation-duration: 90s;
+  animation-name: rotate180;
+  animation-iteration-count: infinite;
+  //filter: blur(5px);
+  z-index: 3;
+  position: absolute;
+}
+.dashed-circle2 {
+  animation-duration: 90s;
+  animation-name: rotate180-2;
+  animation-iteration-count: infinite;
+  //filter: blur(5px);
+  filter: opacity(0.5) drop-shadow(0 0 0 blue);
+  z-index: 2;
+  position: absolute;
+}
+.dashed-circle3 {
+  animation-duration: 90s;
+  animation-name: rotate180-3;
+  animation-iteration-count: infinite;
+  //filter: blur(5px);
+  z-index: 1;
+  position: absolute;
+}
+
+@keyframes rotate180 {
+  from {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate180-2 {
+  from {
+    transform: rotate(0deg) scale(0.75);
+  }
+  to {
+    transform: rotate(360deg) scale(0.75);
+  }
+}
+@keyframes rotate180-3 {
+  from {
+    transform: rotate(0deg) scale(0.55);
+  }
+  50% {
+    transform: rotate(180deg) scale(0.55);
+  }
+  to {
+    transform: rotate(360deg) scale(0.55);
+  }
+}
