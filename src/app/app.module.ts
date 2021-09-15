@@ -13,9 +13,10 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/Toolbar';
 import { KillTheBacklogComponent } from './modules/kill-the-backlog/kill-the-backlog.component';
 import { PortfolioComponent } from './modules/portfolio/portfolio.component';
+import { NavigationBarComponent } from './modules/navigation-bar/navigation-bar.component';
 
 @NgModule({
-  declarations: [AppComponent, HeroComponent, KillTheBacklogComponent, PortfolioComponent],
+  declarations: [AppComponent, HeroComponent, KillTheBacklogComponent, PortfolioComponent, NavigationBarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

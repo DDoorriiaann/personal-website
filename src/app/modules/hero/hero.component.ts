@@ -1,20 +1,28 @@
-import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  AfterViewInit,
+  ElementRef,
+  ViewChild,
+} from '@angular/core';
+import { DataService } from '../../Services/data.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.scss'],
 })
-export class HeroComponent implements AfterViewInit {
-  //// Sidenav
-  @ViewChild(MatSidenav)
-  sidenav!: MatSidenav;
+export class HeroComponent implements OnInit, AfterViewInit, OnDestroy {
+  language!: string;
+  languageSubscription = new Subscription();
 
-  //// Default language
-  language = 'English';
+  jobtitleAnimationStatus!: number;
+  jobtitleAnimationStatusSubscription = new Subscription();
 
   ////Jobtitle animation related variables
+
   @ViewChild('jobTitle') jobTitle!: ElementRef;
   firstJobTitle = 'Front-End';
   secondJobTitle = 'Back-End';
@@ -22,18 +30,33 @@ export class HeroComponent implements AfterViewInit {
   animCount = 0;
   i = 0;
 
-  constructor() {}
+  constructor(private data: DataService) {}
+  ngOnInit(): void {
+    this.languageSubscription = this.data.currentLanguage.subscribe(
+      (language) => (this.language = language!)
+    );
+    this.jobtitleAnimationStatusSubscription =
+      this.data.jobAnimationStatus.subscribe(
+        (status) => (this.jobtitleAnimationStatus = status!)
+      );
+  }
   ngAfterViewInit(): void {
-    /// Get last language selected by user
+    /// Check if language selection is already stored in localStorage
     if (localStorage.getItem('language')) {
       this.language = localStorage.getItem('language')!;
       this.jobTitle.nativeElement.innerHTML = '';
     }
+
     /// Restart jobtitle animation after each page refresh
     this.i = -1;
     this.write1();
   }
-  //////////// Typewriter effect
+  ngOnDestroy() {
+    this.languageSubscription.unsubscribe();
+    this.jobtitleAnimationStatusSubscription.unsubscribe();
+  }
+
+  //////////// Typewriter effect ////////////////////
   write1() {
     let speed = Math.random() * 90 + 50;
     if (this.i < this.firstJobTitle.length && this.animCount == 0) {
@@ -48,7 +71,7 @@ export class HeroComponent implements AfterViewInit {
   }
   delete1() {
     let speed = Math.random() * 80 + 40;
-    if (this.animCount == 0) {
+    if (this.jobtitleAnimationStatus == 0) {
       if (this.i >= 1) {
         this.jobTitle.nativeElement.innerHTML =
           this.jobTitle.nativeElement.innerHTML.slice(0, -1);
@@ -61,7 +84,7 @@ export class HeroComponent implements AfterViewInit {
   }
   write2() {
     let speed = Math.random() * 90 + 30;
-    if (this.animCount == 0) {
+    if (this.jobtitleAnimationStatus == 0) {
       if (this.i < this.secondJobTitle.length) {
         this.jobTitle.nativeElement.innerHTML += this.secondJobTitle.charAt(
           this.i
@@ -75,7 +98,7 @@ export class HeroComponent implements AfterViewInit {
   }
   delete2() {
     let speed = Math.random() * 50 + 20;
-    if (this.animCount == 0) {
+    if (this.jobtitleAnimationStatus == 0) {
       if (this.i > 0) {
         this.jobTitle.nativeElement.innerHTML =
           this.jobTitle.nativeElement.innerHTML.slice(0, -1);
@@ -88,7 +111,7 @@ export class HeroComponent implements AfterViewInit {
   }
   write3() {
     let speed = Math.random() * 50;
-    if (this.animCount == 0) {
+    if (this.jobtitleAnimationStatus == 0) {
       if (this.i < this.thirdJobTitle.length) {
         this.jobTitle.nativeElement.innerHTML += this.thirdJobTitle.charAt(
           this.i
@@ -97,15 +120,5 @@ export class HeroComponent implements AfterViewInit {
         setTimeout(() => this.write3(), speed);
       }
     }
-  }
-  stopAnim() {
-    this.animCount = 1;
-  }
-
-  //////////// Language toggle
-
-  toggleLanguage(updatedLanguage: string) {
-    this.language = updatedLanguage;
-    localStorage.setItem('language', updatedLanguage);
   }
 }

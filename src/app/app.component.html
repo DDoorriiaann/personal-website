@@ -1,1 +1,9 @@
-<router-outlet></router-outlet>
+<app-navigation-bar></app-navigation-bar>
+<mat-sidenav-container>
+  <mat-sidenav mode="over" #sidenav="matSidenav"></mat-sidenav>
+  <mat-sidenav-content
+    ><main [@routeAnimations]="prepareRoute(outlet)" class="content">
+      <router-outlet #outlet="outlet"></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

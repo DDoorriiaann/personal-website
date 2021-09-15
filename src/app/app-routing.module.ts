@@ -6,7 +6,11 @@ import { KillTheBacklogComponent } from './modules/kill-the-backlog/kill-the-bac
 
 const routes: Routes = [
   { path: 'home', component: HeroComponent },
-  { path: 'portfolio', component: PortfolioComponent },
+  {
+    path: 'portfolio',
+    component: PortfolioComponent,
+    data: { animation: 'isRight' },
+  },
   { path: 'kill-the-backlog', component: KillTheBacklogComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

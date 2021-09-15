@@ -1,65 +1,5 @@
 @import "../../../theme-customisation";
-.toolbar {
-  width: 100vw;
-  height: 6vh;
-  display: flex;
-  align-items: center;
-  background-color: $primary;
-  font-family: $primary-font;
-  .menu-icon {
-    color: white;
-    font-size: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .toolbar-button {
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-    width: 10vw;
-    color: white;
-  }
-  & .toolbar-language-selection {
-    background-color: $primary;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 90vw;
-    padding-right: 10px;
-    & .language-button {
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      margin-left: 1vw;
-      padding: 5px;
-      border-radius: 100px;
-      background-color: white;
-      width: 25px;
-      height: 25px;
-      color: $primary;
-      font-weight: 700;
-      user-select: none;
-    }
-  }
-}
 
-mat-sidenav {
-  margin: 10px;
-  padding: 10px;
-  width: calc(40vw - 20px);
-  border-right: none;
-  background: $primary;
-  color: white;
-  border-radius: 10px;
-  text-align: center;
-}
-
-mat-sidenav-container {
-  height: 94vh;
-}
 .hero {
   display: flex;
   flex-direction: column;
@@ -201,19 +141,9 @@ mat-sidenav-container {
   filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.92));
 }
 
-.active-language {
-  background-color: $secondary !important;
-}
-
 ///////Mobile version
 
 @media screen and (max-width: 640px) {
-  mat-sidenav {
-    width: 90vw;
-  }
-  mat-sidenav-container {
-    height: 87vh;
-  }
   .hero {
     min-height: 87vh;
   }
