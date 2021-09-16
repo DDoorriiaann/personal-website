@@ -5,11 +5,16 @@ import { PortfolioComponent } from './modules/portfolio/portfolio.component';
 import { KillTheBacklogComponent } from './modules/kill-the-backlog/kill-the-backlog.component';
 
 const routes: Routes = [
-  { path: 'home', component: HeroComponent },
+  {
+    path: 'home',
+    component: HeroComponent,
+
+    data: { animation: 'home' },
+  },
   {
     path: 'portfolio',
     component: PortfolioComponent,
-    data: { animation: 'isRight' },
+    data: { animation: 'portfolio' },
   },
   { path: 'kill-the-backlog', component: KillTheBacklogComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },

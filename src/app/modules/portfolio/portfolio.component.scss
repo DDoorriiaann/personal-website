@@ -1,0 +1,44 @@
+@import "../../../theme-customisation";
+
+.portfolio-container {
+  font-family: $primary-font;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  color: rgb(73, 73, 73);
+  min-height: 94vh;
+  width: 100vw;
+  & .portfolio-main-title {
+    padding: 3vh 0 2vh 0;
+    font-size: 40px;
+    font-weight: bold;
+    color: $primary;
+  }
+  & .portfolio-project {
+    padding-top: 4vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & .portfolio-project-title {
+      font-size: 20px;
+      padding-bottom: 2vh;
+    }
+    & .portfolio-project-infos {
+      padding: 2vh 0 2vh 0;
+      text-align: center;
+      width: 40vw;
+    }
+    & .portfolio-project-preview {
+      & img {
+        width: 40vw;
+      }
+    }
+    & .portfolio-project-buttons {
+      & .portfolio-project-button {
+        background-color: white;
+        color: black;
+      }
+    }
+  }
+}
