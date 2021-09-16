@@ -1,6 +1,6 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { fader } from './route-animations';
+import { slide } from './route-animations';
 import { MatSidenav } from '@angular/material/sidenav';
 import { DataService } from './Services/data.service';
 import { Subscription } from 'rxjs';
@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [
-    fader,
+    slide,
     // animation triggers go here
   ],
 })
